@@ -65,7 +65,7 @@ btnadd.onclick = addToCart;
 itemdesc.appendChild(btnwrap);
 
 let cartNotice = document.querySelector('.cart-notice');
-cartNotice.innerText = currentUser.cart.length;
+//cartNotice.innerText = currentUser.cart.length;
 
 function addToCart() {
     if(currentUser){
@@ -78,4 +78,39 @@ function addToCart() {
         window.open('auth_form.html', "_self");
     }
 }
+
+let arrBestSellers = JSON.parse(localStorage.getItem('BestSellers'));
+let bestSellersElement = document.querySelector('.best-sellers');
+//let btnLogout = document.getElementById('btnLogout');
+var i=1;
+for(item of arrBestSellers){
+    if(i<5)
+    {
+        i++;
+    let itemElement = document.createElement('section');
+    itemElement.setAttribute('item_id1', item.id);
+    itemElement.setAttribute('array', 'arrBestSellers');
+    itemElement.classList.add('item1')
+    bestSellersElement.appendChild(itemElement);
+
+    let imgElement = document.createElement('section');
+    imgElement.classList.add('item-img1');
+    imgElement.style.backgroundImage = `url(${item.img})`;
+    itemElement.appendChild(imgElement);
+
+    let nameElement = document.createElement('span1');
+    nameElement.classList.add('item-name1');
+    nameElement.innerText = item.name;
+    itemElement.appendChild(nameElement);
+
+    let btnWrap = document.createElement('section');
+    btnWrap.classList.add('item-btn-wrap1');
+
+    let priceElement = document.createElement('span');
+    priceElement.classList.add('item-price1');
+    priceElement.innerText = Number(item.price).toLocaleString() + 'đ';
+    btnWrap.appendChild(priceElement);
+}
+}
+
 

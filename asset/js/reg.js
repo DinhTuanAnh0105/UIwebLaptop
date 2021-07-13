@@ -23,7 +23,6 @@ let arrUser;
 if(localStorage.getItem('Users')){
     arrUser = JSON.parse(localStorage.getItem('Users'));
 } else {
-    //nếu chưa có arrUser trong localStorage thì arrUser=[]
     arrUser = [];
     localStorage.setItem('Users', JSON.stringify(arrUser));
 }
@@ -68,44 +67,23 @@ for(let i = 0 ; i < inputs.length ; i++){
     }
 }
 
-//check username <3 ký tự
+
 username.onblur = username.oninput = function() {
-    if(username.value.trim().length < 3) {
-        setErrorFor(username, 'Tên đăng nhập phải lớn hơn 3 ký tự');
+    if(username.value.trim().length <6) {
+        setErrorFor(username, 'Tên đăng nhập phải it nhat 6 ký tự');
     } else {
         setSuccessFor(username);
     }
 }
 
-//regex email:
-//https://stackoverflow.com/questions/46155/how-to-validate-an-email-address-in-javascript
-function isEmail(email) {
-    const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    return re.test(String(email).toLowerCase());
-}
-// Check email
-email.onblur = email.oninput = function() {
-    if(isEmail(email.value.trim())){
-        setSuccessFor(email);
-    } else {
-        setErrorFor(email,'Trường này phải là email');
-    }
-}
 
-// Check password <6 ký tự
-password.onblur = password.oninput = function() {
-    if(password.value.trim().length < 6) {
-        setErrorFor(password, 'Mật khẩu phải lớn hơn 6 ký tự');
-    } else {
-        setSuccessFor(password);
-    }
-}
 
 // Check trùng password 
 repassword.onblur = repassword.oninput = function() {
     if(repassword.value.trim() === password.value.trim()){
         setSuccessFor(repassword);
     } else {
+        //setErrorFor(repassword, '');
         setErrorFor(repassword, 'Mật khẩu chưa trùng khớp');
     }
 }

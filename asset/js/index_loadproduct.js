@@ -41,9 +41,18 @@ for(item of arrBestSellers){
     var t = document.createTextNode('Thêm vào giỏ');
     btnAdd.appendChild(t);
     btnWrap.appendChild(btnAdd);
-
+    
+    // //
+    // let btnAdd1 = document.createElement('button');
+    // btnAdd1.classList.add('btn', 'btn-add');
+    // var f = document.createTextNode('Chi tiết');
+    // btnAdd1.appendChild(f);
+    // btnWrap.appendChild(btnAdd1);
+    // btnAdd1.onclick=click1;
+    // //
     itemElement.appendChild(btnWrap);
 
+    
     //item onclick
     itemElement.onclick = function() {
         if(this.getAttribute('array') == 'arrBestSellers') {
@@ -67,6 +76,26 @@ for(item of arrBestSellers){
     }
 }
 
+// function click1() {
+//     if(this.parentNode.parentNode.getAttribute('array') == 'arrBestSellers') {
+//         for(item of arrBestSellers){
+//             if(item.id == this.parentNode.parentNode.getAttribute('item_id')){
+//                 var a = {
+//                     id: item.id,
+//                     img: item.img,
+//                     name: item.name,
+//                     brand: item.brand,
+//                     price: item.price,
+//                     desc: item.desc,
+//                     warranty : item.warranty
+//                 };
+//                 console.log(a);
+//                 localStorage.setItem('currentItem', JSON.stringify(a));
+//                 window.open('sanpham.html', "_self");
+//             }
+//         }
+//     }
+// }
 function addToCart(e) {
     e.stopPropagation()
     if(currentUser){

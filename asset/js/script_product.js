@@ -97,7 +97,7 @@ Pin: 3 Cell Int (48Wh)`,
 
 BestSeller.add('./asset/img/best-seller-6__vivo_book_a412.png',
 `Laptop Asus VivoBook A412FA-EK734T (i5 10210U/8GB/512GB SSD/14 inch FHD/Win 10/Bạc)`,
-'Asus',
+'Lenovo',
 '15999000',
 `CPU: Intel Core i5-10210U Processor (4 x 1.60 GHz), Max Turbo Frequency : 4.20 GHz
 RAM: 4GB onboard DDR4/ 2666MHz + [1 x 4GB DDR4/ 2666MHz (1 slot)]

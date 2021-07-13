@@ -69,13 +69,20 @@
 
 .content {
     margin: 32px;
-    display: flex;
+    
     justify-content: center;
 }
 
 .grid.grid1 {
     background-color: #f5f5f5;
     width: 80%;
+    border-radius: 5px;
+    display: flex;
+    flex: 1;
+}
+.grid {
+    background-color: #f5f5f5;
+    display: flex;
     border-radius: 5px;
 }
 
@@ -98,5 +105,129 @@
         width: 80%;
         border: 1px solid black;
         border-radius: 2px;
+    }
+}
+/*  */
+
+.best-sellers {
+    display: flex;
+    margin: 40px auto 0;
+   
+}
+
+.best-sellers .item1:first-child h2 {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 19px;
+    word-spacing: 4px;
+    color: #333;
+    padding-bottom: 5px;
+}
+
+.best-sellers .item1:first-child small {
+    display: block;
+    font-style: italic;
+    font-size: 14px;
+    font-family: serif;
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.best-sellers .item1:first-child p {
+    font-size: 12px;
+    color: #6e6e6e;
+    font-weight: 600;
+    line-height: 14px;
+    padding-top: 14px;
+}
+
+.best-sellers .item1:first-child {
+    cursor: default;
+    padding: 10px;
+    box-shadow: none;
+}
+
+.best-sellers .item1:first-child:hover {
+    top: 0;
+    outline: none;
+}
+
+.item-img1 {
+    /* Tỷ lệ tương đối với thẻ chứa nó padding: 100% 
+    hiểu là bằng chiều ngang của thẻ chứa nó */
+    padding-top: 100%;
+    width: 300px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    cursor: pointer;
+}
+
+.item-name1 {
+    font-size: 14px;
+    font-weight: 500;
+    margin: 10px 10px 6px;
+    text-overflow: ellipsis;
+    line-height: 18px;
+    height: 36px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+
+.item-btn-wrap {
+    margin-top: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+@media screen and (max-width: 860px) {
+
+    .best-sellers {
+        flex-wrap: wrap;
+        margin: 2.5em auto 0;
+        width: 100%;
+    }
+
+    .best-sellers .item1:first-child {
+        width: 100%;
+        text-align: center;
+        padding: 0 2rem;
+        margin: 0 auto 1.5rem auto;
+    }
+
+    .best-sellers .item1:first-child h2 {
+        font-size: 21px;
+        padding-bottom: 10px;
+        letter-spacing: 2px;
+    }
+
+    .best-sellers .item1:first-child p {
+        padding-top: 0.6rem;
+    }
+
+    .item1 {
+        width: 48%;
+        margin: 0 1% 12px;
+    }
+
+    .policy {
+        margin-top: 2.5em;
+        flex-wrap: wrap;
+        min-height: 300px;
+    }
+
+    .policy-label {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 50%;
+        padding: 25px;
+        border-bottom: 1px solid #fff;
+    }
+
+    .policy-label small {
+        margin-top: 0.3rem;
     }
 }
